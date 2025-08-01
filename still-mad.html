@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Still Mad? Good.</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at center, #2a2139, #0f0a1c);
+      color: #ffd1dc;
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .confession {
+      max-width: 650px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3rem;
+      border-radius: 2rem;
+      box-shadow: 0 0 30px #ff8fab70;
+      border: 2px solid #ffb3c6;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #ffe4ec;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #ffdce5;
+    }
+
+    button {
+      margin-top: 2.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.3rem;
+      background: #ffd1dc;
+      color: #1f1c2c;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #ffb3c6, 0 0 20px #ffb3c6 inset;
+    }
+
+    button:hover {
+      background: #ffb3c6;
+    }
+
+    #begging, #kissBtn {
+      display: none;
+      margin-top: 2rem;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #kissBtn {
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px #ffb3c6, 0 0 20px #ffb3c6 inset; }
+      50% { box-shadow: 0 0 20px #ff9aa2, 0 0 30px #ffb3c6 inset; }
+      100% { box-shadow: 0 0 10px #ffb3c6, 0 0 20px #ffb3c6 inset; }
+    }
+  </style>
+</head>
+<body>
+  <div class="confession">
+    <h2>Still mad? Good.</h2>
+    <p>
+      I'm not above groveling.  
+      Just say the word, and I’ll give you every inch of my apology.<br><br>
+      But if you want me to beg? Click below.
+    </p>
+    <button onclick="showBegging()">Beg First 😐</button>
+
+    <div id="begging">
+      <p>
+        Please, Princess… I can’t eat, can’t sleep, can’t breathe right.  
+        My chest feels like it’s collapsing every time I remember how I hurt you.<br><br>
+
+        Punish me. Ignore me. Spit fire in my face.  
+        But don’t take your love from me. I’ll do anything. I’ll be anything.<br><br>
+
+        Just let me make this right.
+      </p>
+    </div>
+
+    <div id="kissBtn">
+      <button onclick="alert('You kissed me? I swear on my soul I’ll be better forever.')">💋 Kiss the Prince</button>
+    </div>
+  </div>
+
+  <script>
+    function showBegging() {
+      document.getElementById("begging").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("kissBtn").style.display = "block";
+      }, 3000); // makes you wait 3 seconds before he *earns* the kiss
+    }
+  </script>
+</body>
+</html>
+
